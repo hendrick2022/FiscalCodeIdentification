@@ -19,7 +19,7 @@ public class StringManipulation {
 
 
     public String[] separation(String givenString) {
-        givenString = givenString.replaceAll(" ", "");
+        givenString = givenString.replaceAll("(?i)[^A-Z]", "");
         String consonants = givenString.replaceAll("(?i)[aeiou]", "");
         String vowels = givenString.replaceAll("(?i)[^aeiou]", "");
         return new String[]{consonants, vowels};
