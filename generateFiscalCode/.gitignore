@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/web,maven,intellij,git,database
 # Edit at https://www.toptal.com/developers/gitignore?templates=web,maven,intellij,git,database
-
+.idea
+.mvn
+HELP.md
+learnSpringBoot.iml
+mvnw.cmd
 ### Database ###
 *.accdb
 *.db
