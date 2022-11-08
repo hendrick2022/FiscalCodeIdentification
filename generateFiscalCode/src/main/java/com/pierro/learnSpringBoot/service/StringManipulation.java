@@ -19,6 +19,7 @@ public class StringManipulation {
 
 
     public String[] separation(String givenString) {
+        givenString = givenString.replaceAll(" ", "");
         String consonants = givenString.replaceAll("(?i)[aeiou]", "");
         String vowels = givenString.replaceAll("(?i)[^aeiou]", "");
         return new String[]{consonants, vowels};
@@ -151,12 +152,10 @@ public class StringManipulation {
     }
 
     public String getTheCode(Person person){
-        String pattern = "dd-MM-yyyy";
-        LocalDate a = (person.getBirthDate());
-        String  b = a.toString();
-        System.out.println( b);
+
+        String  date = (person.getBirthDate()).toString();
         String firstPartCode = surnameCode(separation(person.getSurname())) + firstNameCode(separation(person.getFirstName())) +
-                (b.substring(2,4) + monthLetter(b.substring(5,7))+ birthDayCode(b.substring(8,10),person.getGender()) +
+                (date.substring(2,4) + monthLetter(date.substring(5,7))+ birthDayCode(date.substring(8,10),person.getGender()) +
                 repo.findByTownName(person.getTown()).getTownCode());
         System.out.println("        hello this is the first part code       " + firstPartCode);
         String code = firstPartCode + codeLetter(firstPartCode);

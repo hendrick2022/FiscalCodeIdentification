@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9deb89a6-51e5-4736-aa6a-b08eada6b1e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667885480222</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updating git ignore file">
+      <created>1667885964553</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667885964553</updated>
+    </task>
+    <task id="LOCAL-00003" summary="more adjustment of the git ignore">
+      <created>1667886227870</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667886227870</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +144,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fundamental modules for our REST api to generate fiscal code identification" />
-    <option name="LAST_COMMIT_MESSAGE" value="fundamental modules for our REST api to generate fiscal code identification" />
+    <MESSAGE value="updating git ignore file" />
+    <MESSAGE value="more adjustment of the git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="more adjustment of the git ignore" />
   </component>
 </project>
