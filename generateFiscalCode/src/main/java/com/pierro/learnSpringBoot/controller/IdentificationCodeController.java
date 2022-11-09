@@ -29,13 +29,19 @@ public class IdentificationCodeController {
 
     @PostMapping ("/person/getIdCodeAndSave")
     public Person firstPartCode(@RequestBody Person person) {
+        if (townRepo.findByTownName(person.getTown()) != null){
             String code = theString.getTheCode(person);
             person.setIdentificationCode(code);
             if(personRepo.findByIdentificationCode(code) == null) {
                 System.out.println(person.toString());
                 personRepo.save(person);
             }
-        return person;
+            return person;
+        }else{
+            person.setTown("check the spelling of town no such town in our data base") ;
+            return person;
+        }
+
     }
 
 
@@ -73,19 +79,21 @@ public class IdentificationCodeController {
 
 
 
-    @PutMapping("/person/update/{idCode}")
+    @PutMapping("/person/{idCode}")
     public String update(@RequestBody Person person, @PathVariable String idCode) {
         try {
-            if(personRepo.findByIdentificationCode(idCode) != null){
+            if (personRepo.findByIdentificationCode(idCode) != null) {
                 Person wrongPerson = personRepo.findByIdentificationCode(idCode);
                 person.setIdentificationCode(theString.getTheCode(person));
                 personRepo.save(person);
                 personRepo.delete(wrongPerson);
+                return " successful update the new identification code is " + person.getIdentificationCode();
+            } else {
+                return "no body with this id in our data base";
             }
-            return " successful update the new identification code is " + person.getIdentificationCode();
-        } catch (NoSuchElementException e){
-
-            return "no body with this id in our data base";
+        }catch (NoSuchElementException e){
+            e.printStackTrace();
+            return "no such element found";
         }
     }
 

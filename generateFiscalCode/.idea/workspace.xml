@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9deb89a6-51e5-4736-aa6a-b08eada6b1e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

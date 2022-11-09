@@ -133,7 +133,8 @@ public class StringManipulation {
         if(gender.equals("male") ){
            return birthDate;
         }else {
-            return Integer.parseInt(birthDate +40) + "";
+            System.out.println(birthDate );
+            return (Integer.parseInt(birthDate ) +40) + "";
         }
     }
 
@@ -157,6 +158,7 @@ public class StringManipulation {
         String firstPartCode = surnameCode(separation(person.getSurname())) + firstNameCode(separation(person.getFirstName())) +
                 (date.substring(2,4) + monthLetter(date.substring(5,7))+ birthDayCode(date.substring(8,10),person.getGender()) +
                 repo.findByTownName(person.getTown()).getTownCode());
+        System.out.println(date + "              " + date.substring(8,10));
         System.out.println("        hello this is the first part code       " + firstPartCode);
         String code = firstPartCode + codeLetter(firstPartCode);
 
