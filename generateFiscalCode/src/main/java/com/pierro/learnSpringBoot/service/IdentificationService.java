@@ -2,7 +2,9 @@ package com.pierro.learnSpringBoot.service;
 
 
 import com.pierro.learnSpringBoot.entity.Person;
+import com.pierro.learnSpringBoot.entity.PersonDTO;
 import com.pierro.learnSpringBoot.repository.TownRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,12 @@ import java.util.Arrays;
 import java.util.Date;
 
 @Service
-public class StringManipulation {
+public class IdentificationService {
 
     @Autowired
     TownRepository repo;
+    @Autowired
+    ModelMapper modelMapper;
 
 
     public String[] separation(String givenString) {
@@ -158,13 +162,24 @@ public class StringManipulation {
         String firstPartCode = surnameCode(separation(person.getSurname())) + firstNameCode(separation(person.getFirstName())) +
                 (date.substring(2,4) + monthLetter(date.substring(5,7))+ birthDayCode(date.substring(8,10),person.getGender()) +
                 repo.findByTownName(person.getTown()).getTownCode());
-        System.out.println(date + "              " + date.substring(8,10));
-        System.out.println("        hello this is the first part code       " + firstPartCode);
         String code = firstPartCode + codeLetter(firstPartCode);
 
         return code;
     }
 
+
+    public Person convertToEntity(PersonDTO personDto, String idCode){
+        Person myPerson = modelMapper.map(personDto, Person.class);
+        myPerson.setIdentificationCode(idCode);
+        return myPerson;
+    }
+
+
+    public PersonDTO convertToDto(Person person, String message){
+        PersonDTO myPerson = modelMapper.map(person, PersonDTO.class);
+        myPerson.setMessage(message);
+        return myPerson;
+    }
 
 
 }

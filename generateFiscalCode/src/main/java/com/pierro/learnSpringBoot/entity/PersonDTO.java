@@ -1,61 +1,44 @@
 package com.pierro.learnSpringBoot.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDate;
+@JsonPropertyOrder({"message","id", "surname", "firstName", "birthDate", "gender", "town"})
+public class PersonDTO {
 
-
-@Component
-@Entity
-
-public class Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String identificationCode;
-    private String Surname;
+    private String surname;
     private String firstName;
     @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate birthDate;
     private String gender;
     private String town;
+    private String message;
 
 
-    public Person() {
+    public PersonDTO() {
     }
 
-    public Person(int id) {
-        this.id = id;
-    }
 
     public LocalDate getBirthDate() {
         return birthDate;
+    }
+
+    public PersonDTO(String message) {
+        this.message = message;
     }
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public String getIdentificationCode() {
-        return identificationCode;
-    }
-
-    public void setIdentificationCode(String identificationCode) {
-        this.identificationCode = identificationCode;
-    }
-
-
     public String getSurname() {
-        return Surname;
+        return surname;
     }
 
     public void setSurname(String surname) {
-        Surname = surname;
+        this.surname = surname;
     }
 
     public String getFirstName() {
@@ -66,12 +49,12 @@ public class Person {
         this.firstName = firstName;
     }
 
-    public int getId() {
-        return id;
+    public String getMessage() {
+        return message;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getTown() {
@@ -90,17 +73,21 @@ public class Person {
         this.gender = gender;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
-        return "PersonInfo{" +
-                "identificationCode='" + identificationCode + '\'' +
-                ", Surname='" + Surname + '\'' +
+        return "PersonDTOInfo{" +
+                ", Surname='" + surname + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", town='" + town + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
     }
 }
-

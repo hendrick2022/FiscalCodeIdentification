@@ -2,15 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9deb89a6-51e5-4736-aa6a-b08eada6b1e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/PersonDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learnSpringBoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/learnSpringBoot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/LearnSpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/LearnSpringBootApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/IdentificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pierro/learnSpringBoot/LearnSpringBootApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pierro/learnSpringBoot/LearnSpringBootApplication.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -134,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667890636572</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="little adjustment on controller for better performance">
+      <created>1667978772877</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667978772877</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +176,7 @@
     <MESSAGE value="updating git ignore file" />
     <MESSAGE value="more adjustment of the git ignore" />
     <MESSAGE value="little adjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="little adjustment" />
+    <MESSAGE value="little adjustment on controller for better performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="little adjustment on controller for better performance" />
   </component>
 </project>
