@@ -85,31 +85,33 @@ public class IdentificationCodeController {
     @PutMapping("/person/{id}")
     public ResponseEntity<PersonDTO> updatePerson(@RequestBody PersonDTO personDto, @PathVariable int id) {
         Person updatePerson = service.convertToEntity(personDto,"");
-        updatePerson.setIdentificationCode(service.getTheCode(updatePerson));
-        try {
-            Person person = personRepo.findById(id).orElse(null);
-            if (Objects.nonNull(person)){
-                person.setIdentificationCode(service.getTheCode(updatePerson));
-                person.setTown(updatePerson.getTown());
-                person.setBirthDate(updatePerson.getBirthDate());
-                person.setFirstName(updatePerson.getFirstName());
-                person.setSurname(updatePerson.getSurname());
-                person.setGender(updatePerson.getGender());
-                personRepo.save(person);
-                return ResponseEntity.status(HttpStatus.OK).body(service.convertToDto(person, "THIS PERSON HAS BEEN SUCCESSFULLY UPDATED"));
-            }else {
-                Person thePerson = personRepo.findByIdentificationCode(service.getTheCode(updatePerson));
-                if(thePerson == null) {
-                    personRepo.save(updatePerson);
-                    return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToDto(updatePerson, "THIS PERSON HAS BEEN CREATED"));
-                }else{
-                    updatePerson.setId(thePerson.getId());
-                    return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(service.convertToDto(updatePerson, "THIS PERSON ALREADY EXIST"));
+        if (Objects.nonNull(townRepo.findByTownName(updatePerson.getTown())) ){
+            updatePerson.setIdentificationCode(service.getTheCode(updatePerson));
+            try {
+                Person person = personRepo.findById(id).orElse(null);
+                if (Objects.nonNull(person)){
+                    person.setIdentificationCode(service.getTheCode(updatePerson));
+                    person.setTown(updatePerson.getTown());
+                    person.setBirthDate(updatePerson.getBirthDate());
+                    person.setFirstName(updatePerson.getFirstName());
+                    person.setSurname(updatePerson.getSurname());
+                    person.setGender(updatePerson.getGender());
+                    personRepo.save(person);
+                    return ResponseEntity.status(HttpStatus.OK).body(service.convertToDto(person, "THIS PERSON HAS BEEN SUCCESSFULLY UPDATED"));
+                }else {
+                    if(personRepo.findByIdentificationCode(service.getTheCode(updatePerson)) == null) {
+                        personRepo.save(updatePerson);
+                        return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToDto(updatePerson, "THIS PERSON HAS BEEN CREATED"));
+                    }else{
+                        return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body(service.convertToDto(updatePerson, "THIS PERSON ALREADY EXIST"));
+                    }
                 }
+            } catch (NoSuchElementException e) {
+                e.printStackTrace();
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
             }
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
+        }else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(service.convertToDto(updatePerson,"CHECK THE SPELLING OF TOWN NO SUCH TOWN IN OUR DATA BASE"));
         }
     }
 
