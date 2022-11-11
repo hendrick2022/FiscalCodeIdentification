@@ -55,7 +55,6 @@ public class IdentificationCodeController {
             ArrayList<PersonDTO> personDtos = new ArrayList<PersonDTO>();
             if (Objects.nonNull(persons)) {
                 persons.stream().forEach(person -> { personDtos.add(service.convertToDto(person,"person Number  " + person.getId()+ "")); });
-                System.out.println(personDtos);
                 return ResponseEntity.status(HttpStatus.OK).body(personDtos);
             } else
                 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(new PersonDTO("THE LIST IS EMPTY FOR NOW"));
@@ -99,8 +98,14 @@ public class IdentificationCodeController {
                 personRepo.save(person);
                 return ResponseEntity.status(HttpStatus.OK).body(service.convertToDto(person, "THIS PERSON HAS BEEN SUCCESSFULLY UPDATED"));
             }else {
-                personRepo.save(updatePerson);
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(service.convertToDto(updatePerson, "THIS PERSON HAS BEEN CREATED"));
+                Person thePerson = personRepo.findByIdentificationCode(service.getTheCode(updatePerson));
+                if(thePerson == null) {
+                    personRepo.save(updatePerson);
+                    return ResponseEntity.status(HttpStatus.CREATED).body(service.convertToDto(updatePerson, "THIS PERSON HAS BEEN CREATED"));
+                }else{
+                    updatePerson.setId(thePerson.getId());
+                    return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(service.convertToDto(updatePerson, "THIS PERSON ALREADY EXIST"));
+                }
             }
         } catch (NoSuchElementException e) {
             e.printStackTrace();
@@ -110,17 +115,16 @@ public class IdentificationCodeController {
 
 
 
-
     @DeleteMapping("/person/{id}")
     public ResponseEntity<PersonDTO> deleting(@PathVariable int id) {
         try {
             Person person = personRepo.findById(id).orElse(null);
-            PersonDTO thisPerson = service.convertToDto(person, "THIS PERSON HAS SUCCESSFULLY BEEN DELETED");
             if (Objects.nonNull(person)){
+                PersonDTO thisPerson = service.convertToDto(person, "THIS PERSON HAS SUCCESSFULLY BEEN DELETED");
                 personRepo.deleteById(id);
                 return ResponseEntity.status(HttpStatus.OK).body(thisPerson);
             }else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new PersonDTO("NOBODY WITH THIS ID FOR NOW"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new PersonDTO(id,"NOBODY WITH THIS ID FOR NOW"));
             }
         } catch (NoSuchElementException e) {
             e.printStackTrace();
@@ -167,4 +171,4 @@ public class IdentificationCodeController {
 
 }
 
-// https://springjava.com/spring-boot/entity-to-dto-on-spring-boot-rest-api
+

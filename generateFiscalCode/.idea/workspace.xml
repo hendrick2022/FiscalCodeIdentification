@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9deb89a6-51e5-4736-aa6a-b08eada6b1e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/PersonDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnSpringBoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/learnSpringBoot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/LearnSpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/LearnSpringBootApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/controller/IdentificationCodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/repository/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/StringManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/service/IdentificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pierro/learnSpringBoot/LearnSpringBootApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pierro/learnSpringBoot/LearnSpringBootApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/PersonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pierro/learnSpringBoot/entity/PersonDTO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667978772877</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="EntityDTO has been included to better handle response better organisation of response body">
+      <created>1668107355539</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668107355539</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +177,7 @@
     <MESSAGE value="more adjustment of the git ignore" />
     <MESSAGE value="little adjustment" />
     <MESSAGE value="little adjustment on controller for better performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="little adjustment on controller for better performance" />
+    <MESSAGE value="EntityDTO has been included to better handle response better organisation of response body" />
+    <option name="LAST_COMMIT_MESSAGE" value="EntityDTO has been included to better handle response better organisation of response body" />
   </component>
 </project>

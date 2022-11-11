@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.time.LocalDate;
+
 @JsonPropertyOrder({"message","id", "surname", "firstName", "birthDate", "gender", "town"})
 public class PersonDTO {
 
@@ -20,18 +21,23 @@ public class PersonDTO {
     public PersonDTO() {
     }
 
+    public PersonDTO(String message) {
+        this.message = message;
+    }
+
+    public PersonDTO(int id, String message) {
+        this.id = id;
+        this.message = message;
+    }
 
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public PersonDTO(String message) {
-        this.message = message;
-    }
-
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
+
 
     public String getSurname() {
         return surname;
