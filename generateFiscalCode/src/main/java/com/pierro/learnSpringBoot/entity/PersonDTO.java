@@ -1,16 +1,20 @@
 package com.pierro.learnSpringBoot.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.time.LocalDate;
-
+//@Datalombok
 @JsonPropertyOrder({"message","id", "surname", "firstName", "birthDate", "gender", "town"})
 public class PersonDTO {
-
+    @JsonProperty
     private int id;
+    @JsonProperty
     private String surname;
+    @JsonProperty
     private String firstName;
+    @JsonProperty
     @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate birthDate;
     private String gender;

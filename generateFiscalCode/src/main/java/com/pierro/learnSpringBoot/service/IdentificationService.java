@@ -126,7 +126,7 @@ public class IdentificationService {
                 number += evenCharacterCode[index];
             }
         }
-
+//enum in java strim
         return myChar[number%26];
     }
 
@@ -137,7 +137,6 @@ public class IdentificationService {
         if(gender.equals("male") ){
            return birthDate;
         }else {
-            System.out.println(birthDate );
             return (Integer.parseInt(birthDate ) +40) + "";
         }
     }
